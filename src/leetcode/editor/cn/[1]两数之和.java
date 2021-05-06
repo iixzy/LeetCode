@@ -27,22 +27,21 @@ public class 两数之和{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-    	int[] arr = new int[2];
-//    	第一个数为target-nums[i],第二个数为nums[i]
-		Map<Integer,Integer> map = new HashMap<>();// 存放数值
-		Map<Integer,Integer> map2 = new HashMap<>();// 存放数值对应的下标
+//		2020年11月30日11:21:14
+		Map<Integer,Integer> map = new HashMap<>();
+		int[] arr = new int[2];
 		int n = nums.length;
-		for (int i = 0; i < nums.length; i++) {
+		for (int i = 0; i < n; i++) {
 			if (map.containsKey(nums[i])) {
-				arr[0] = map2.get(nums[i]);
+				arr[0] = map.get(nums[i]);
 				arr[1] = i;
 				break;
-			} else {
-				map.put(target-nums[i],nums[i]);
-				map2.put(target-nums[i],i);
 			}
+			map.put(target - nums[i],i);
 		}
 		return arr;
+
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
